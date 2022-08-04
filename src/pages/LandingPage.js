@@ -299,10 +299,8 @@ const Bar = ({
         setSelectedInvoiceDetails(data.filter(row => selected.indexOf(row['Sl_no']) != -1));
     }, [ selected ])
 
-    const isDisabledEditButton = (selected.length !== 1);
-    const isDisabledViewCorrespondenceButton = (selected.length === 0);
     const isDisabledDeleteButton = (selected.length === 0);
-    const isDisabledPredictButton = (selected.length === 0);
+   
 
     return (
         <AppBar className={classes.ToolBar}>
@@ -310,10 +308,28 @@ const Bar = ({
                 
                 <div style={{ paddingRight: '10px', paddingTop: '10px', display: 'flex' }}>
                     <div style={{ paddingRight: '20px', paddingTop: '10px', }}>
+                        <Button 
+                            className={isDisabledDeleteButton ? classes.DisabledButton : classes.Button} 
+                            onClick={handleEditInvoice}
+                            disabled={isDisabledDeleteButton}
+                           
+                        >
+                            <EditIcon style={{ paddingRight: '1px' }}/>
+                            <div style={{paddingLeft: '4px'}}>
+                            Order
+                            </div>
+                        </Button>
+                        <EditInvoicePage 
+                            open={openEditInvoice} setOpen={setOpenEditInvoice}
+                            selectedInvoiceDetails={selectedInvoiceDetails}
+                            setDataPageCount={setDataPageCount} setData={setData}
+                        />
+                    </div>
+                    <div style={{ paddingRight: '20px', paddingTop: '10px', }}>
                     <Button 
-                        className={isDisabledDeleteButton ? classes.DisabledButton : classes.Button} 
+                        className={classes.Button} 
                         onClick={handleDeleteInvoice}
-                        disabled={isDisabledDeleteButton}
+                        
                     >
                          Pay
                     </Button>
@@ -323,26 +339,12 @@ const Bar = ({
                         setDataPageCount={setDataPageCount}
                     />
                     </div>
-                    <div style={{ paddingRight: '20px', paddingTop: '10px', }}>
-                        <Button 
-                            className={classes.Button} 
-                            onClick={handleEditInvoice}
-                           
-                        >
-                            <EditIcon style={{ paddingRight: '10px' }}/>
-                            Order
-                        </Button>
-                        <EditInvoicePage 
-                            open={openEditInvoice} setOpen={setOpenEditInvoice}
-                            selectedInvoiceDetails={selectedInvoiceDetails}
-                            setDataPageCount={setDataPageCount} setData={setData}
-                        />
-                    </div>
+                 
                    
-                    <div style={{ paddingTop: '10px',paddingLeft: '280px',paddingBottom: '10px' }}>
+                    <div style={{ paddingTop: '10px',paddingLeft: '250px',paddingBottom: '10px' }}>
                         <Input
                             className={classes.searchByInvoiceNumber}
-                            placeholder='Search by Food item'
+                            placeholder='Search Food'
                             disableUnderline={true}
                             value={searchKeyword}
                             onChange={(event) => handleSearch(event)}

@@ -102,7 +102,7 @@ const EditMenu = ({
                     Table Number
                 </div>
                 <div style={{ paddingBottom: '45px', display: 'flex' }}>
-                    Feedback
+                    Notes
                 </div>
             </div>
             <div>
