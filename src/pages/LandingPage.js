@@ -124,15 +124,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Header = (props) => {
-    const classes = useStyles();
-    return (
-        <div className={classes.Header}>
-           
-            
-        </div>
-    )
-}
 
 const DataTable = ({
     data, setData,
