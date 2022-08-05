@@ -1,6 +1,7 @@
 import Navbar from "./Navbar"
 import Pricing from "./pages/Pricing"
 import LandingPage from "./pages/LandingPage"
+import Landing from "./pages/Landing"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import { Route, Routes } from "react-router-dom"
@@ -50,6 +51,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Order" element={<LandingPage />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Login" element={<Pricing />} />
+          <Route path="/List" element={<Landing />} />
+
         </Routes>
       </div>
     </>

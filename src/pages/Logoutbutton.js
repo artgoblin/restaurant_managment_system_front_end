@@ -1,6 +1,10 @@
-import Loginbutton from "./Loginbutton";
-import Logoutbutton from "./Logoutbutton";
-import { makeStyles } from "@material-ui/core";
+import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   LandingPage: {
@@ -117,27 +121,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Pricing() {
-  const classes=useStyles();
-    return(
-    <>  
-    <h2>
-     <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '70vh',width:'97vw'}} className={classes.InvoiceList}>
-          Only for employees: 
-          <div>
-            <Loginbutton />
-            <Logoutbutton />
-          </div>
-      </div>
-    </h2>
-  </>  
+
+const Logoutbutton = () => {
+    const classes=useStyles();
+    const { logout } = useAuth0();
+  return (
+    <Button
+    className={classes.Button}
     
+    onClick={()=> logout()}
     
-    );
+    >
+            Logout
+    </Button>
 
-    
+  )
+}
 
-  }
-
-
-  export default Pricing
+export default Logoutbutton
