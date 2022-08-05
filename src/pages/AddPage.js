@@ -259,7 +259,7 @@ const AddMenu = ({
                                 
                                 className={isErrorbusinessCode ? classes.ErrorInputBox : classes.InputBox}
                                 disableUnderline={true}
-                                placeholder='business code'
+                                placeholder='Food Item'
                                 required={true}
                                 defaultValue={businessCode}
                                 onChange={(event) => handlebusinessCode(event)}
@@ -272,7 +272,7 @@ const AddMenu = ({
                                 
                                 className={isErrordocId ? classes.ErrorInputBox : classes.InputBox}
                                 disableUnderline={true}
-                                placeholder='Document Id'
+                                placeholder='Serving'
                                 required={true}
                                 defaultValue={docId}
                                 onChange={(event) => handledocId(event)}
@@ -285,7 +285,7 @@ const AddMenu = ({
                                 
                                 className={isErrorinvoiceCurrency ? classes.ErrorInputBox : classes.InputBox}
                                 disableUnderline={true}
-                                placeholder='Invoice Currency'
+                                placeholder='Price'
                                 required={true}
                                 defaultValue={invoiceCurrency}
                                 onChange={(event) => handleinvoiceCurrency(event)}
