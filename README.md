@@ -3,7 +3,6 @@ https://drive.google.com/file/d/1dEN9eIgF54cqbqFmjRrX5kbpuoK3J_ql/view?usp=shari
 
 ## **Back end**
 Run backend in 8081 port 
-link- https://github.com/artgoblin/restaurant_management_backend.git
 
 
 
