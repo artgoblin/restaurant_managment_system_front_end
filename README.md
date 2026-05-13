@@ -1,5 +1,3 @@
-# **Demo video**
-https://drive.google.com/file/d/1dEN9eIgF54cqbqFmjRrX5kbpuoK3J_ql/view?usp=sharing
 
 ## **Back end**
 Run backend in 8081 port 
